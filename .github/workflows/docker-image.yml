@@ -25,7 +25,7 @@ jobs:
     - name: Make new tag
       run: |
         ds=$(date +%s)
-        docker tag vector-admin:latest swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:${ds}
+        docker tag vector-admin:latest swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:d${ds}
 
     - name: Login to Huawei Cloud Container Registry
       run: |
@@ -33,4 +33,4 @@ jobs:
         docker login -u ap-southeast-1@WQNYRKPMYGBRONLHYHL1 -p "$hmac_result" swr.ap-southeast-1.myhuaweicloud.com
 
     - name: Push image
-      run: docker push swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:${ds}
+      run: docker push swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:d${ds}
