@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
+    - name: Setup yarn
+    - run: yarn dev:setup
+    
     - name: Build the Docker image
       run: docker build ./docker --tag vector:$(date +%s)
