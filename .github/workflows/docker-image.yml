@@ -30,7 +30,7 @@ jobs:
     - name: Login to Huawei Cloud Container Registry
       run: |
         hmac_result=$(printf "WQNYRKPMYGBRONLHYHL1" | openssl dgst -binary -sha256 -hmac "V8BvaT9CwdRDCBnt9w8qDoL54hPnfbg8tf6AypUA" | od -An -vtx1 | sed 's/[ \n]//g' | sed 'N;s/\n//')
-        docker login -u cn-north-4@WQNYRKPMYGBRONLHYHL1 -p "$hmac_result" swr.ap-southeast-1.myhuaweicloud.com
+        docker login -u ap-southeast-1@WQNYRKPMYGBRONLHYHL1 -p "$hmac_result" swr.ap-southeast-1.myhuaweicloud.com
 
     - name: Push image
       run: docker push swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:${ds}
