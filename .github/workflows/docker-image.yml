@@ -24,7 +24,7 @@ jobs:
 
     - name: Make new tag
       run: |
-        ds=$(date +%s)
+        export ds=$(date +%s)
         docker tag vector-admin:latest swr.ap-southeast-1.myhuaweicloud.com/sunny/vector:d${ds}
 
     - name: Login to Huawei Cloud Container Registry
